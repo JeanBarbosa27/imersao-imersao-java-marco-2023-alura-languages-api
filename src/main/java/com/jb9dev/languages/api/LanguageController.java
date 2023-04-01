@@ -1,19 +1,12 @@
 package com.jb9dev.languages.api;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.data.domain.Example;
-import org.springframework.data.domain.Page;
-import org.springframework.data.domain.Pageable;
-import org.springframework.data.domain.Sort;
-import org.springframework.data.repository.query.FluentQuery;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.server.ResponseStatusException;
 
 import java.util.List;
-import java.util.Optional;
-import java.util.function.Function;
 
 @RestController
 public class LanguageController {
@@ -36,13 +29,40 @@ public class LanguageController {
     }
 
     @GetMapping("/languages-ranking")
-    public List<Language> getLanguagesRaking() {
+    public List<Language> listLanguagesRanking() {
+        // TODO: Sort by ranking
         return repository.findAll();
     }
 
+    @GetMapping("/languages-ranking/{id}")
+    public Language getLanguageById(@PathVariable String id) {
+        return repository.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
+    }
+
     @PostMapping("/languages-ranking")
-    public Language create(@RequestBody Language language) {
+    public ResponseEntity<Language> addLanguageOnRanking(@RequestBody Language language) {
         // Find how to return status 201
+        return new ResponseEntity<>(repository.save(language), HttpStatus.CREATED);
+    }
+
+    @PutMapping("/languages-ranking/{id}")
+    public Language updateLanguageOnRanking(@PathVariable String id, @RequestBody Language language) {
+        if (!repository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        System.out.println("language: " + language);
+
+        language.setId(id);
         return repository.save(language);
+    }
+
+    @DeleteMapping("/languages-ranking/{id}")
+    public void deleteLanguageFromRanking(@PathVariable String id) {
+        if(!repository.existsById(id)) {
+            throw new ResponseStatusException(HttpStatus.NOT_FOUND);
+        }
+
+        repository.deleteById(id);
     }
 }
