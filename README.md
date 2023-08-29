@@ -18,8 +18,8 @@ for example.
 
 ### Environment variables
 
-Mongo DB URI must be set through a system environment variable called `SPRING_DATA_MONGODB_URI` which must contain the
-whole MongoDB string conection.
+First of all, you need to create a system environment variable called `SPRING_DATA_MONGODB_URI`, which must hold the
+whole Mongo DB URI connection string, to be able to connect the mongo DB when running the application.
 
 ---
 
