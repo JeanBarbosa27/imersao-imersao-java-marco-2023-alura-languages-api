@@ -16,6 +16,11 @@ for example.
 
 ## How to run locally
 
+### Environment variables
+
+Mongo DB URI must be set through a system environment variable called `SPRING_DATA_MONGODB_URI` which must contain the
+whole MongoDB string conection.
+
 ---
 
 🚧🚧 
