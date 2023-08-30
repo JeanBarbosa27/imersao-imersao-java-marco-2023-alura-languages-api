@@ -4,8 +4,8 @@ This repository was created for studying purposes in order to follow a one-week 
 [Alura's channel on YouTube](https://youtube.com/@alura), which were available only online from March 27th to March 31st
 in 2023.
 
-So the purpose was first just follow the classes (which I'll put on a V1.0.0 tag), to then implement my own ideas
-(which I'll put in a V2.0.0 tag).
+So the purpose was first just follow the classes (which I'll put on a v1.0.0 tag), to then implement my own ideas
+(which I'll put in a v2.x.y tag).
 
 The project itself is a simple CRUD API application which interacts with a list of programming languages, just to show
 how to do it in Java using Spring Boot and MongoDB. It can be also in conjunction with [Alura Sticker Generator](https://github.com/JeanBarbosa27/imersao-java-marco-2023-alura-sticker-generator)
