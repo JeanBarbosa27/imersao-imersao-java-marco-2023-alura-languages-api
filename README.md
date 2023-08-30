@@ -1,10 +1,16 @@
 # Languages API
 
-This repository was created to follow one-week classes on YouTube from [Alura's channel](https://youtube.com/@alura),
-which were available only online on that week. So the purpose was first just follow the classes, to then implement my
-own ideas to it. The project itself is a simple API application which do the CRUD to interact with a list of programming
-languages, just to show how to do it in Java and MongoDB. It was also used in conjunction with another project which
-creates stickers by a given image, so it can be used to create stickers with the languages logos, its name and raking,
+This repository was created for studying purposes in order to follow a one-week imersive classes managed on YouTube from
+[Alura's channel on YouTube](https://youtube.com/@alura), which were available only online from March 27th to March 31st
+in 2023.
+
+So the purpose was first just follow the classes (which I'll put on a V1.0.0 tag), to then implement my own ideas
+(which I'll put in a V2.0.0 tag).
+
+The project itself is a simple CRUD API application which interacts with a list of programming languages, just to show
+how to do it in Java using Spring Boot and MongoDB. It can be also in conjunction with [Alura Sticker Generator](https://github.com/JeanBarbosa27/imersao-java-marco-2023-alura-sticker-generator)
+which is another project created during the same one-week imersive classes, that creates stickers by a given image, so
+this API can be used to serve the images to be used in the stickers with the languages logos, its name and raking,
 for example.
 
 ## Project dependencies
